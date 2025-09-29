@@ -1,4 +1,3 @@
-
 function getBedtime(age) {
     var stressInput = document.getElementById("stress").value;
     var ageInput = document.getElementById("age").value;
@@ -27,6 +26,17 @@ function getBedtime(age) {
        
         //changing the bedtime based on low stress & not tired, high stress & not tired, low stress & tired, and high stress & tired 
         if (stressInput<=3 && tiredness == "no"){
+            document.getElementById("output").innerHTML = recalcOutput("10 PM","11 Hours");
+        }
+        else if ((stressInput > 3 && tiredness == "no") || (stressInput <= 3 && tiredness == "yes")){
+            document.getElementById("output").innerHTML = recalcOutput("9 PM","12 Hours");
+        }
+        else{
+            document.getElementById("output").innerHTML = recalcOutput("8 PM","13 Hours");
+        }
+    }
+    else if (ageInput >= 13 && ageInput <= 18){
+        if (stressInput<=3 && tiredness == "no"){
             document.getElementById("output").innerHTML = recalcOutput("10 PM","10 Hours");
         }
         else if ((stressInput > 3 && tiredness == "no") || (stressInput <= 3 && tiredness == "yes")){
@@ -36,18 +46,33 @@ function getBedtime(age) {
             document.getElementById("output").innerHTML = recalcOutput("8 PM","12 Hours");
         }
     }
-    else if (ageInput >= 13 && ageInput <= 18){
-        document.getElementById("output").innerHTML = recalcOutput("10 PM","10 Hours");
-    }
     else if (ageInput >= 19 && ageInput <= 64){
-        document.getElementById("output").innerHTML = recalcOutput("11 PM","8 Hours");
+        if (stressInput<=3 && tiredness == "no"){
+            document.getElementById("output").innerHTML = recalcOutput("11 PM","8 Hours");
+        }
+        else if ((stressInput > 3 && tiredness == "no") || (stressInput <= 3 && tiredness == "yes")){
+            document.getElementById("output").innerHTML = recalcOutput("10 PM","9 Hours");
+        }
+        else{
+            document.getElementById("output").innerHTML = recalcOutput("9 PM","10 Hours");
+        }
     }
     else if (ageInput >= 65 && ageInput <= 116){
-    document.getElementById("output").innerHTML = recalcOutput("9 PM","7 Hours");
+        if (stressInput<=3 && tiredness == "no"){
+            document.getElementById("output").innerHTML = recalcOutput("9 PM","7 Hours");
+        }
+        else if ((stressInput > 3 && tiredness == "no") || (stressInput <= 3 && tiredness == "yes")){
+            document.getElementById("output").innerHTML = recalcOutput("8 PM","8 Hours");
+        }
+        else{
+            document.getElementById("output").innerHTML = recalcOutput("7 PM","9 Hours");
+        }
     }
 }
 // function that puts the parameters into the output string so I can use it above without writing the new output string everytime 
 function recalcOutput (bedtime, hoursSleep){
+    console.log(bedtime)
     var newOutput = bedtime + "!" + "<br>" + "Hours of sleep needed: " + hoursSleep + "<br>";
+    console.log(newOutput)
     return newOutput
 }
