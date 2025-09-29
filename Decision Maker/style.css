@@ -1,0 +1,36 @@
+body{
+  font-family: Georgia;
+  text-align: center;
+  background-color: lightgrey;
+  padding: 0 !important;
+}
+header{
+  background-color: rgb(85, 165, 235);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+label{
+  font-size: 20px;
+}
+select{
+  font-family: Georgia;
+  font-size: 20px;
+}
+input{
+  font-family: Georgia;
+  font-size: 20px;
+}
+button{
+  background-color: rgb(85, 165, 235);
+  padding: 10px;
+  font-family: Georgia;
+  border: none;
+  margin-bottom: 10px;
+}
+.outputBox{
+  padding: 10px;
+  min-height: 160px;
+  width: 60%;
+  outline-color: rgb(85, 165, 235);
+  outline-style: solid;
+}

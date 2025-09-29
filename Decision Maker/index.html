@@ -1,0 +1,52 @@
+<!-- When should you go to bed? -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Bedtime</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<header>
+		<h1>When to go to sleep</h1>
+		<p>Enter your age, the time you should wake up, and your stress level and it will generate when you should go to sleep!</p>
+	</header>
+
+	<center>
+		<label>Stress Level: </label>
+    <select id="stress">
+      <option value="one">1</option>
+      <option value="two">2</option>
+      <option value="three">3</option>
+      <option value="four">4</option>
+      <option value="five">5</option>
+    </select>
+    <br>
+    <br>
+
+    <label>Age: </label>
+    <input type="text" id="age"><br><br>
+    
+    	<label>Were you extra tired today?: </label>
+    <select id="tired">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    <br>
+    <br>
+   
+
+    <button onclick="getBedtime()">Calculate my bedtime!</button>
+
+    <div class="outputBox">
+      <h2>Bedtime at...</h2>
+  	  <img width="60%"src=data:image/jpeg;base64,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>
+		  <p id="output"> </p>
+	  </div>
+
+  </center>
+    <script src="script.js"></script>
+  </body>
+</html>
