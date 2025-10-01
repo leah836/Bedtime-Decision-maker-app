@@ -1,3 +1,4 @@
+
 function getBedtime(age) {
     var stressInput = document.getElementById("stress").value;
     var ageInput = document.getElementById("age").value;
@@ -23,14 +24,15 @@ function getBedtime(age) {
         document.getElementById("output").innerHTML = "Congrats you are the oldest person alive! Get some rest."
     }
     else if (ageInput >= 0 && ageInput <= 12){
-       
-        //changing the bedtime based on low stress & not tired, high stress & not tired, low stress & tired, and high stress & tired 
+        //changing the bedtime based on low stress & not tired 
         if (stressInput<=3 && tiredness == "no"){
             document.getElementById("output").innerHTML = recalcOutput("10 PM","11 Hours");
         }
+        //changing the bedtime based on high stress & not tired and low stress & tired
         else if ((stressInput > 3 && tiredness == "no") || (stressInput <= 3 && tiredness == "yes")){
             document.getElementById("output").innerHTML = recalcOutput("9 PM","12 Hours");
         }
+        //changing the bedtime based on high stress & tired
         else{
             document.getElementById("output").innerHTML = recalcOutput("8 PM","13 Hours");
         }
